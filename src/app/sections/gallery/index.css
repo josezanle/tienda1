@@ -1,0 +1,78 @@
+.gallery__container {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    display: flex;
+    flex-flow: column;
+    padding: 2em;
+    align-items: center;
+}
+
+.gallery__container .title {
+    font-size: 4em;
+    font-weight: bold;
+    color: #aede6f;
+}
+
+.gallery__container .desc {
+    font-size: 2em;
+    color:#1c1c1c;
+    font-weight: 300;
+    margin-bottom: 4em;
+}
+
+.gallery__container .content__mode__normal {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 2em;
+}
+/* --------------------------- */
+/* --------------------------- */
+.gallery__container .content__mode__list {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    margin-top: 2em;
+}
+/* --------------------------- */
+/* --------------------------- */
+.gallery__container .more {
+    width: 150px;
+    color: silver;
+    padding: .5em 0;
+    margin-top: 3em;
+    margin-bottom: 5em;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: .5em;
+    justify-self: center;
+}
+
+/* Breakpoint para pantallas más grandes (1200px o más) */
+@media screen and (min-width: 1200px) {
+    .gallery__container .content__mode__normal {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Breakpoint para pantallas medianas (800px o más) */
+@media screen and (max-width: 1199px) {
+    .gallery__container .content__mode__normal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Breakpoint para pantallas pequeñas (500px o más) */
+@media screen and (max-width: 799px) {
+    .gallery__container .content__mode__normal {
+        grid-template-columns: 1fr;
+    }
+}

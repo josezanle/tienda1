@@ -1,0 +1,38 @@
+.searchBar__container {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar__container .search__input {
+    width: 90%;
+    height: 100%;
+    border-radius: .5em;
+}
+
+.searchBar__container .search__input input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: .5em;
+    border: 1px solid silver;
+    padding-left: 1em;
+}
+
+.searchBar__container .mode__items__view {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchBar__container .mode__items__view .item {
+    width: 49%;
+    height: 100%;
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,31 @@
+.banner__container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+.banner__container .content {
+    width: 100%;
+    height: calc(800px - 80px);
+    background-image: url("https://images.pexels.com/photos/10411177/pexels-photo-10411177.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1em;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column;
+    padding: 2em;
+}
+.banner__container .content .title {
+    font-size: 6em;
+    color: white;
+}
+.banner__container .content .desc {
+    width: 25%;
+    font-size: 2em;
+    color: white;
+    font-weight: 500;
+}
