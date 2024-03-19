@@ -1,94 +1,101 @@
 import { useState } from "react";
-
-
-
+import { Icon } from "../icons";
+import Logo from "../logo";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal } from "@/app/store/modalSlice";
 
 const BurgerNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const dispatch = useDispatch();
+
+    const cart = useSelector(state => state.cart);
+
+    const handleOpenModal = () => dispatch(openModal())
+
     const toggleNavbar = () => setIsOpen(!isOpen)
 
     return (
-        <nav>
-            <div className="logo">Logo</div>
-            <ul className={`nav-links ${isOpen ? 'nav-active' : ''}`}>
-                <li><Link href="/"><a>Home</a></Link></li>
-                <li><Link href="/about"><a>About</a></Link></li>
-                <li><Link href="/contact"><a>Contact</a></Link></li>
-                <li><Link href="/gallery"><a>Gallery</a></Link></li>
-            </ul>
-            <div className="burger" onClick={toggleNavbar}>
-                <div className="line"></div>
-                <div className="line"></div>
-                <div className="line"></div>
-            </div>
+        <nav className="burger__navbar">
+            <Logo size="30px" />
+
+            {
+                cart?.items?.length > 0
+                    ? <span className="cart__box"><Icon name='cart' fill='#1c1c1c' onClick={handleOpenModal} /></span>
+                    : <span className="cart__box__empty"><Icon name='cart' fill='#1c1c1c' /></span>
+            }
+
+            <Icon name={isOpen === true ? "close" : "burger"} onClick={toggleNavbar} />
+
+            {isOpen &&
+                <div className="dropdown__content">
+                    <h1>Me</h1>
+                    <h1>Me</h1>
+                    <h1>Me</h1>
+                    <h1>Me</h1>
+                    <h1>Me</h1>
+                </div>
+            }
+
             <style jsx>{`
-                nav {
-                    background-color: #2196f3;
-                    color: #fff;
+                .burger__navbar {
+                    width: 100%;
+                    height: 60px;
+                    background-color: white;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 10px 20px;
-                }
-
-                .logo {
-                    font-size: 24px;
-                    font-weight: bold;
-                }
-
-                .nav-links {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                    display: flex;
-                }
-
-                .nav-links li {
-                    margin-right: 20px;
-                }
-
-                .nav-links a {
-                    color: #fff;
-                    text-decoration: none;
-                    font-size: 18px;
-                }
-
-                .burger {
+                    padding: 2em;
                     display: none;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    width: 30px;
-                    height: 20px;
-                    cursor: pointer;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    gap: 10px;
                 }
 
-                .line {
+                .burger__navbar .dropdown__content {
+                    display: none;
+                    position: fixed;
+                    top: 60px;
+                    left: 0;
+                    right: 0;
+                    width: 100vw;
+                    height: 0;
+                    background-color: white;
+                    z-index: 3000;
+                    transition: height 0.3s ease;
+                    padding: 2em;
+                }
+
+                .burger__navbar .dropdown__content {display: none; height: calc(100vh - 60px)}
+
+                .burger__navbar .cart__box {
+                    position: relative;
                     width: 100%;
-                    height: 3px;
-                    background-color: #fff;
+                    display: none;
+                }
+                .burger__navbar .cart__box__empty {
+                    width: 100%;
+                    display: none;
+                }
+                .burger__navbar .cart__box:after {
+                    position: absolute;
+                    right: 0px;
+                    top: -8px;
+                    width: 12px;
+                    height: 12px;
+                    background: #aede6f;
+                    content: "";
+                    border-radius: 50%;
                 }
 
                 @media screen and (max-width: 800px) {
-                    .nav-links {
-                        display: none;
-                        flex-direction: column;
-                        align-items: center;
-                        width: 100%;
-                        position: absolute;
-                        top: 60px;
-                        left: 0;
-                        background-color: #2196f3;
-                        padding: 10px 0;
-                    }
-
-                    .nav-links li {
-                        margin: 10px 0;
-                    }
-
-                    .burger {
-                        display: flex;
-                    }
+                    .burger__navbar {display: flex}
+                    .burger__navbar .dropdown__content {display: block}
+                    .burger__navbar .cart__box {display: flex; justify-content: flex-end}
+                    .burger__navbar .cart__box__empty {display: flex; justify-content: flex-end}
+                    .burger__navbar .dropdown__content {display: block}
                 }
             `}</style>
         </nav>

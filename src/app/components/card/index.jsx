@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProductToCart } from '@/app/store/cartSlice';
 
-const Card = ({ item, addToCart, showGalleryMode }) => {
+const Card = ({ item, showGalleryMode }) => {
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
-  const handleIncrement = () => setQuantity((prevQuantity) => prevQuantity + 1)
+  const handleIncrement = () => setQuantity(prevQuantity => prevQuantity + 1);
 
   const handleDecrement = () => {
     if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
+      setQuantity(prevQuantity => prevQuantity - 1);
     }
+  };
+
+
+  const addToCart = (item, quantity) => {
+    const productWithQuantity = { ...item, quantity }; // Agregar la cantidad al objeto del producto
+    dispatch(addProductToCart(productWithQuantity));
   };
 
   return (
@@ -18,12 +27,10 @@ const Card = ({ item, addToCart, showGalleryMode }) => {
       </div>
 
       <div className="bottom">
-
         <div className="text__content">
           <h4 className='card__title'>{item.title}</h4>
           <p className='card__desc'>{item.description}</p>
         </div>
-
 
         <div className="price__content">
           <h6 className='item__price'>{item.price}$ USD</h6>
@@ -36,7 +43,6 @@ const Card = ({ item, addToCart, showGalleryMode }) => {
 
         </div>
         <button className="addCart__btn" onClick={() => addToCart(item, quantity)}>Añadir</button>
-
 
       </div>
 

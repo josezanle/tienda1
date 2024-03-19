@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Icon } from '../icons'
 import { closeModal, openModal } from '@/app/store/modalSlice';
+import { Icon } from '../icons'
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
-
     const dispatch = useDispatch();
-    const isModalOpen = useSelector((state) => state.modal.isOpen);
+
+    const cart = useSelector(state => state.cart);
 
     const handleOpenModal = () => dispatch(openModal())
-
-    // const handleCloseModal = () => dispatch(closeModal())
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,6 +26,7 @@ const Navbar = () => {
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
     return (
         <div className={`navbar__content ${isSticky ? "sticky" : ""}`}>
             <div className="left__navbar">
@@ -43,9 +42,12 @@ const Navbar = () => {
 
             <div className="right__navbar">
                 <h3 className='login'>Login</h3>
-                <button className="cart__box" onClick={handleOpenModal}>
-                    <Icon name='cart' fill='#1c1c1c' />
-                </button>
+                {
+                    cart?.items?.length > 0
+                        ? <span className="cart__box"><Icon name='cart' fill='#1c1c1c' onClick={handleOpenModal} /></span>
+                        : <Icon name='cart' fill='#1c1c1c' />
+                }
+
             </div>
 
             <style jsx>{`
@@ -121,7 +123,11 @@ const Navbar = () => {
             .navbar__content .right__navbar .login:hover {
                 color: #aede6f;
             }
-                
+
+            @media screen and (max-width: 800px) {
+                .navbar__content {display: none}
+            }
+            
             `}</style>
         </div>
     )

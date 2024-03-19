@@ -13,6 +13,8 @@ import { Cart } from './cart'
 import { Search } from './search'
 import {GridList} from './gridList'
 import { GridImages } from './gridImages'
+import { Close } from './close'
+import { Burger } from './burger'
 
 export const Icon = ({ name = "applause", size = 20, fill = "silver", onClick = () => { } }) => {
     switch (name) {
@@ -31,11 +33,17 @@ export const Icon = ({ name = "applause", size = 20, fill = "silver", onClick = 
         case "arrow-large":
             return <ArrowLong size={size} fill={fill} onClick={onClick} />
 
+        case "burger":
+            return <Burger size={size} fill={fill} onClick={onClick} />
+
         case "cart":
             return <Cart size={size} fill={fill} onClick={onClick} />
 
         case "check":
             return <Check size={size} fill={fill} onClick={onClick} />
+
+        case "close":
+            return <Close size={size} fill={fill} onClick={onClick} />
 
         case "sms":
             return <Sms size={size} fill={fill} onClick={onClick} />

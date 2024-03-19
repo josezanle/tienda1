@@ -1,11 +1,14 @@
 import React from 'react'
 import Navbar from '@/app/components/navbar'
+import BurgerNavbar from '@/app/components/navbar-burger'
+
 import './index.css'
 
 const Banner = () => {
   return (
     <div className='banner__container'>
       <Navbar />
+      <BurgerNavbar />
 
       <div className="content">
         <h2 className='title'>Catalogo 2024</h2>
