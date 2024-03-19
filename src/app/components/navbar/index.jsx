@@ -93,9 +93,7 @@ const Navbar = () => {
                 font-size: 1.5em;
                 cursor: pointer;
             }
-            .navbar__content .mid__navbar .link:hover{
-                color: #aede6f;
-            }
+            .navbar__content .mid__navbar .link:hover{color: #aede6f}
 
             .navbar__content .right__navbar {
                 display: flex;
@@ -120,14 +118,10 @@ const Navbar = () => {
                 content: "";
                 border-radius: 50%;
             }
-            .navbar__content .right__navbar .login:hover {
-                color: #aede6f;
-            }
+            .navbar__content .right__navbar .login:hover {color: #aede6f}
 
-            @media screen and (max-width: 800px) {
-                .navbar__content {display: none}
-            }
-            
+            @media screen and (max-width: 800px) {.navbar__content {display: none}}
+
             `}</style>
         </div>
     )
