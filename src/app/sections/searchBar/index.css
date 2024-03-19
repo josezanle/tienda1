@@ -36,3 +36,13 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 1200px) {
+    .searchBar__container .mode__items__view .item {min-width: 60px}
+    .searchBar__container .search__input {
+        width: calc(100% - 60px);
+    }
+    .searchBar__container .search__input input {
+        width: 100%;
+    }
+}

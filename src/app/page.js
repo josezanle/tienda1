@@ -1,4 +1,5 @@
 'use client';
+
 import Banner from "./sections/banner";
 import Footer from "./sections/footer";
 import Gallery from "./sections/gallery";

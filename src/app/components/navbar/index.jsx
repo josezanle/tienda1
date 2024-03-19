@@ -53,7 +53,7 @@ const Navbar = () => {
             <style jsx>{`
             .navbar__content {
                 width: 100%;
-                padding: 0 3em;
+                padding: 0 2em;
                 height: 80px;
                 position: fixed;
                 top: 0;
@@ -77,7 +77,6 @@ const Navbar = () => {
                 align-items: center;
             }
             .navbar__content .left__navbar .name__example {
-                font-family: "Macondo", cursive;
                 color: #aede6f;
                 font-size: 2em;
                 font-weight: bold;

@@ -2,10 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 button,
 hr {
   border: none;
   outline: none;
+}
+
+html, body{
+  width: 100%;
+  min-height: 100vh;
 }

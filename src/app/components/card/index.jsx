@@ -33,7 +33,7 @@ const Card = ({ item, showGalleryMode }) => {
         </div>
 
         <div className="price__content">
-          <h6 className='item__price'>{item.price}$ USD</h6>
+          <h4 className='item__price'>{item.price}$ USD</h4>
 
           <div className="quantity__ctrls">
             <button onClick={handleDecrement}>-</button>
@@ -80,6 +80,7 @@ const Card = ({ item, showGalleryMode }) => {
           font-size: 2em;
           font-weight: 600;
           color: grey;
+          color: #FFD08F
       }
 
       .card__normalMode .bottom .text__content .card__desc {
@@ -94,6 +95,7 @@ const Card = ({ item, showGalleryMode }) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          color: grey;
       }
 
       .card__normalMode .bottom .price__content .item__price {
@@ -115,6 +117,7 @@ const Card = ({ item, showGalleryMode }) => {
           background: #000;
           color: white;
           font-weight: bold;
+          font-size: 1.3em;
           border: none;
           outline: none;
           border-radius: 5px;
@@ -215,6 +218,7 @@ const Card = ({ item, showGalleryMode }) => {
           justify-content: space-between;
           align-items: center;
           gap: 10px;
+          font-weight: bold;
       }
 
       .card__listMode .bottom .price__content .quantity__ctrls button {
@@ -242,9 +246,14 @@ const Card = ({ item, showGalleryMode }) => {
           width: 60px;
       }
 
+      @media screen and (max-width: 700px) {
+        .card__normalMode .bottom .text__content .card__title,
+        .card__listMode .bottom .card__title{font-size: 1.5em}
 
-
-
+        .card__normalMode .bottom .text__content .card__desc,
+        .card__listMode .bottom .card__desc {font-size: 1.2em}
+    
+      }
       `}</style>
 
     </div>
