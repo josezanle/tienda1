@@ -18,42 +18,42 @@ const ITEMS = [
         id: 1,
         image: "https://images.pexels.com/photos/8268989/pexels-photo-8268989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Modelo 1",
-        description: "it is a short description like a short test",
+        description: "Ultra comfort classic",
         price: 10
     },
     {
         id: 2,
         image: "https://images.pexels.com/photos/12368205/pexels-photo-12368205.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Modelo 2",
-        description: "it is a short description like a short test",
+        description: "Ultra comfort classic",
         price: 10
     },
     {
         id: 3,
         image: "https://images.pexels.com/photos/1124466/pexels-photo-1124466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Modelo 3",
-        description: "it is a short description like a short test",
+        description: "Ultra comfort classic",
         price: 10
     },
     {
         id: 4,
         image: "https://images.pexels.com/photos/786003/pexels-photo-786003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Modelo 4",
-        description: "it is a short description like a short test",
+        description: "Ultra comfort classic",
         price: 10
     },
     {
         id: 5,
         image: "https://images.pexels.com/photos/6484027/pexels-photo-6484027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Modelo 5",
-        description: "it is a short description like a short test",
+        description: "Ultra comfort classic",
         price: 10
     },
     {
         id: 6,
         image: "https://images.pexels.com/photos/16304369/pexels-photo-16304369/free-photo-of-moda-zapatos-estilo-nike.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Modelo 6",
-        description: "it is a short description like a short test",
+        description: "Ultra comfort classic",
         price: 10
     },
 ]

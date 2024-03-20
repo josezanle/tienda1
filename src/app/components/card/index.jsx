@@ -41,9 +41,10 @@ const Card = ({ item, showGalleryMode }) => {
             <button onClick={handleIncrement}>+</button>
           </div>
 
+          <button className="addCart__btn__responsive" onClick={() => addToCart(item, quantity)}>Añadir</button>
         </div>
-        <button className="addCart__btn" onClick={() => addToCart(item, quantity)}>Añadir</button>
 
+        <button className="addCart__btn" onClick={() => addToCart(item, quantity)}>Añadir</button>
       </div>
 
       <style jsx>{`
@@ -140,6 +141,20 @@ const Card = ({ item, showGalleryMode }) => {
       {/* ----------------------------------- */}
       {/* -------------LIST MODE------------- */}
 
+      .card__listMode .bottom .price__content .addCart__btn__responsive {
+          display: none;
+          text-align: center;
+          background: #000;
+          color: white;
+          font-weight: 500;
+          border: none;
+          outline: none;
+          font-size: 14px;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 0;
+          cursor: none;
+        }
       .card__listMode {
           width: 100%;
           height: 100px;
@@ -147,12 +162,11 @@ const Card = ({ item, showGalleryMode }) => {
           display: flex;
           align-items: center;
           cursor: pointer;
-          padding: 1em;
           gap: 1em;
           transition: background-color 0.3s; 
       }
       .card__listMode:hover {
-        background: hsla(0, 0%, 94%, 0.3);
+        background: hsla(0, 0%, 94%, 0.5);
       }
 
       .card__listMode .top {
@@ -177,19 +191,19 @@ const Card = ({ item, showGalleryMode }) => {
       .card__listMode .bottom .text__content {
           height: 80px;
           display: flex;
-          flex-flow: column;
           justify-content: center;
+          flex-flow: column;
       }
 
       .card__listMode .bottom .card__title {
-          font-size: 2em;
-          font-weight: 600;
-          color: grey;
+          font-size: 1.3em;
+          font-weight: 500;
+          color: #1c1c1c;
           width: 100%;
       }
 
       .card__listMode .bottom .card__desc {
-          font-size: 1.5em;
+          font-size: 1em;
           font-weight: 300;
           color: grey;
           width: 100%;
@@ -221,8 +235,8 @@ const Card = ({ item, showGalleryMode }) => {
       }
 
       .card__listMode .bottom .price__content .quantity__ctrls button {
-          width: 100%;
-          padding: 5px 0;
+          width: 25px;
+          height: 25px;
           text-align: center;
           background: #000;
           color: white;
@@ -231,6 +245,7 @@ const Card = ({ item, showGalleryMode }) => {
           outline: none;
           border-radius: 5px;
           cursor: pointer;
+          font-size: 1.3em;
       }
       .card__listMode .bottom .addCart__btn {
           text-align: center;
@@ -253,6 +268,42 @@ const Card = ({ item, showGalleryMode }) => {
         .card__listMode .bottom .card__desc {font-size: 1.2em}
       }
 
+      @media screen and (max-width: 560px) {
+        .card__listMode {width: 100%; gap: .5em}
+        .card__listMode .bottom .card__title {font-size: 16px; font-weight: 600}
+        .card__listMode .bottom .card__desc {font-size: 14px}
+        .card__listMode .bottom .price__content {
+            width: 100%;
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
+        }
+        .card__listMode .bottom {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: start;
+            align-items: start;
+        }
+        .card__listMode .bottom .price__content .quantity__ctrls {
+            width: auto;
+            display: flex;
+            gap: 7px;
+        }
+       
+        .card__listMode .bottom .price__content .quantity__ctrls button {
+            width: 20px;
+            height: 20px;
+            font-weight: 600;
+            cursor: none;
+            font-size: 1em;
+        }
+        .card__listMode .bottom .price__content .addCart__btn__responsive {display: block}
+        .card__listMode .bottom .addCart__btn {display: none}
+}
+
       @media screen and (max-width: 400px) {
         .card__normalMode {
           width: 100%;
@@ -263,7 +314,7 @@ const Card = ({ item, showGalleryMode }) => {
         .card__normalMode .bottom {height: 40%}
 
       }
-      `}</style>
+`}</style>
 
     </div>
   );

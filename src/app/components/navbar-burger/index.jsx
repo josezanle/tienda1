@@ -17,7 +17,7 @@ const BurgerNavbar = () => {
 
     return (
         <nav className="burger__navbar">
-            <Logo size="30px" />
+            <Logo size="30px" strokeOne="#aede6f"/>
 
             {
                 cart?.items?.length > 0

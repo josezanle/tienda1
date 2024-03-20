@@ -1,7 +1,7 @@
 import { Br } from "@/app/components/br";
 import Logo from "@/app/components/logo";
 
-const Footer = ({ background = "white", textColor = "#1c1c1c" }) => {
+const Footer = ({ background = "#95ca4f", textColor = "white" }) => {
   return (
     <footer>
       <div className="footer__content" id="footer" style={{background:background, color:textColor}}>

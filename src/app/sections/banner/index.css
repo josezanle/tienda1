@@ -23,7 +23,10 @@
 }
 
 @media (max-width: 1200px) {
-    .banner__container .title {font-size: 4em}
+    .banner__container .title {
+        font-size: 4em
+    }
+
     .banner__container .desc {
         width: 50%;
         font-size: 2em;
@@ -31,17 +34,33 @@
 }
 
 @media screen and (max-width: 900px) {
-    .banner__container .title {font-size: 3em}
+    .banner__container .title {
+        font-size: 3em
+    }
+
     .banner__container .desc {
         width: 70%;
     }
 }
+
 @media screen and (max-width: 700px) {
-    .banner__container .title {font-size: 2em}
-    .banner__container .desc {width: 100%; font-size: 1.5em}
+    .banner__container .title {
+        font-size: 2em
+    }
+
+    .banner__container .desc {
+        width: 100%;
+        font-size: 1.5em
+    }
 
     .banner__container {
         width: 100%;
         height: calc(100vh - 80px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner__container {
+        background-image: url("https://images.pexels.com/photos/3642551/pexels-photo-3642551.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1");
     }
 }

@@ -5,13 +5,10 @@ import './index.css'
 const Banner = () => {
   return (
     <div className='banner__container'>
-      <h2 className='title'>Catalogo 2024</h2>
-      <p className='desc'>Encuentra todo lo nuevo para estrenar en esta temporada</p>
+      <h2 className='title'>Descubre las Novedades</h2>
+      <p className='desc'>Explora las últimas tendencias y estrenos en nuestra tienda.</p>
     </div>
   )
 }
 
 export default Banner
-
-
-// A LOS 600PX CAMBIAR IMG BANNER

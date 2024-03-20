@@ -1,0 +1,10 @@
+.videoBanner__container {
+    width: 1200px;
+    display: flex;
+    justify-self: center;
+    margin: auto;
+    margin-top: 3em;
+}
+
+@media (max-width: 1340px) {.videoBanner__container {width: 100%}}
+@media (max-width: 1200px) {.videoBanner__container {max-height: 700px}}
