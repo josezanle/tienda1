@@ -159,7 +159,8 @@ const Footer = ({ background = "#95ca4f", textColor = "white" }) => {
           .footer__content .contact__email {font-size: 40px}
         }
 
-        @media (max-width: 590px) {
+        @media (max-width: 600px) {
+          .footer__content {padding: 1em}
           .footer__content .contact__email {font-size: 25px}
           .footer__content .start__project__button {width: 100%}
         }

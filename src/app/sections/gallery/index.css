@@ -70,5 +70,5 @@
         margin-bottom: 1em;
         width: 100%;
     }
-    
 }
+@media screen and (max-width: 600px) {.gallery__container {padding: 1em}}

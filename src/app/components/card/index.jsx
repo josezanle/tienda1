@@ -141,6 +141,7 @@ const Card = ({ item, showGalleryMode }) => {
       {/* ----------------------------------- */}
       {/* -------------LIST MODE------------- */}
 
+      .card__normalMode .bottom .price__content .addCart__btn__responsive {display: none}
       .card__listMode .bottom .price__content .addCart__btn__responsive {
           display: none;
           text-align: center;

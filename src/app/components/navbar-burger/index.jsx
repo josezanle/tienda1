@@ -97,6 +97,7 @@ const BurgerNavbar = () => {
                     .burger__navbar .cart__box__empty {display: flex; justify-content: flex-end}
                     .burger__navbar .dropdown__content {display: block}
                 }
+                @media screen and (max-width: 600px) {.burger__navbar {padding: 1em}}
             `}</style>
         </nav>
     );

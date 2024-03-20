@@ -121,7 +121,6 @@ const Navbar = () => {
             .navbar__content .right__navbar .login:hover {color: #aede6f}
 
             @media screen and (max-width: 800px) {.navbar__content {display: none}}
-
             `}</style>
         </div>
     )

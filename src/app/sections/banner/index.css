@@ -64,3 +64,5 @@
         background-image: url("https://images.pexels.com/photos/3642551/pexels-photo-3642551.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1");
     }
 }
+
+@media screen and (max-width: 600px) {.banner__container {padding: 1em}}
