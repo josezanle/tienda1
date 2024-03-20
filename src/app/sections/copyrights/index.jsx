@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Copyrights = () => {
+const Copyrights = ({ background = "#95ca4f", textColor = "white" }) => {
     return (
         <div className='copyrights__section'>
             <div className="content">
@@ -18,7 +18,8 @@ const Copyrights = () => {
                     padding: 1em 2em; 
                     display: flex;
                     justify-content: center;
-                    background-color: white;
+                    background: ${background};
+                    
                 }
                 .copyrights__section .responsive {display: none}
                 .copyrights__section .content {
@@ -26,13 +27,13 @@ const Copyrights = () => {
                     display: flex;
                     flex-flow: row;
                     justify-content: space-between;
-                    color: black
+                    color: ${textColor};
                 }
 
                 .copyrights__section .left,
                 .copyrights__section .mid,
                 .copyrights__section .right {
-                    color: black;
+                    color: ${textColor};
                     font-weight: bold;
                     font-size: 20px;
                 }
@@ -40,7 +41,7 @@ const Copyrights = () => {
                 @media (max-width: 1280px) {.copyrights__section .content {width: 100%, padding: 0 2em}}
                 @media (max-width: 850px) {
                     .copyrights__section .content {display: none}
-                    .copyrights__section .responsive {display: block; color: black}
+                    .copyrights__section .responsive {display: block; color: ${textColor};}
                 }
             `}
             </style>
