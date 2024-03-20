@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '../icons';
+import { Br } from '../br';
 
 const CartModal = ({ title, onClose, isOpen, children, handleClearCart }) => {
     if (!isOpen) return null;
@@ -12,7 +13,13 @@ const CartModal = ({ title, onClose, isOpen, children, handleClearCart }) => {
                     <Icon name='close' onClick={onClose} />
                 </div>
 
+                <Br/>
+                <Br/>
+
                 <div className="main__modal__content">{children}</div>
+
+                <Br />
+                <Br />
 
                 <div className="bottom__modal__content">
                     <button className="pay___button">Pagar</button>
@@ -60,7 +67,6 @@ const CartModal = ({ title, onClose, isOpen, children, handleClearCart }) => {
                     flex: 1;
                     display: flex;
                     justify-content: space-between;
-                    margin-top: 2em;
                 }
                 .modal__overlay .modal__content .bottom__modal__content .pay___button{
                     background: black;

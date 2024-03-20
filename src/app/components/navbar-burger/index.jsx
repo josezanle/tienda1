@@ -21,8 +21,8 @@ const BurgerNavbar = () => {
 
             {
                 cart?.items?.length > 0
-                    ? <span className="cart__box"><Icon name='cart' fill='#1c1c1c' onClick={handleOpenModal} /></span>
-                    : <span className="cart__box__empty"><Icon name='cart' fill='#1c1c1c' /></span>
+                    ? <span className="cart__box"><Icon size={30} name='cart' fill='#1c1c1c' onClick={handleOpenModal} /></span>
+                    : <span className="cart__box__empty"><Icon size={30} name='cart' fill='#1c1c1c' /></span>
             }
 
             <Icon name={isOpen === true ? "close" : "burger"} onClick={toggleNavbar} />
