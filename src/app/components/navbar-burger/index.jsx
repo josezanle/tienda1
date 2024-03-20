@@ -17,7 +17,7 @@ const BurgerNavbar = () => {
 
     return (
         <nav className="burger__navbar">
-            <Logo size="30px" strokeOne="#aede6f"/>
+            <Logo size="30px" strokeOne="#aede6f" />
 
             {
                 cart?.items?.length > 0
@@ -29,11 +29,10 @@ const BurgerNavbar = () => {
 
             {isOpen &&
                 <div className="dropdown__content">
-                    <h1>Me</h1>
-                    <h1>Me</h1>
-                    <h1>Me</h1>
-                    <h1>Me</h1>
-                    <h1>Me</h1>
+                    <h1>HOMBRE</h1>
+                    <h1>MUJER</h1>
+                    <h1>NIÑOS</h1>
+                    <h1>JOVENES</h1>
                 </div>
             }
 
@@ -62,7 +61,7 @@ const BurgerNavbar = () => {
                     right: 0;
                     width: 100vw;
                     height: 0;
-                    background-color: white;
+                    background-image: linear-gradient(to top,#dc9a34, #eaad51);
                     z-index: 3000;
                     transition: height 0.3s ease;
                     padding: 2em;
@@ -92,10 +91,17 @@ const BurgerNavbar = () => {
 
                 @media screen and (max-width: 800px) {
                     .burger__navbar {display: flex}
-                    .burger__navbar .dropdown__content {display: block}
+                    .burger__navbar .dropdown__content {
+                        display: flex;
+                        justify-content: center;
+                        color: white;
+                        flex-flow: column;
+                        font-size: 30px;
+                        gap: 16px;
+
+                    }
                     .burger__navbar .cart__box {display: flex; justify-content: flex-end}
                     .burger__navbar .cart__box__empty {display: flex; justify-content: flex-end}
-                    .burger__navbar .dropdown__content {display: block}
                 }
                 @media screen and (max-width: 600px) {.burger__navbar {padding: 1em}}
             `}</style>

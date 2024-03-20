@@ -12,6 +12,7 @@ import { Br } from '@/app/components/br';
 import CartModal from '@/app/components/modal';
 
 import './index.css'
+import CardList from '@/app/components/cardList';
 
 const ITEMS = [
     {
@@ -100,21 +101,13 @@ const Gallery = () => {
             <h3 className='more'>Ver mas</h3>
 
             {isModalOpen &&
-                <CartModal isOpen={isModalOpen} onClose={handleCloseModal} title="Carrito de compras">
-                    <div>
-                        {cart?.items?.map((item, i) => {
-                            return (
-                                <div key={i}>
-                                    {item.title} {item.price}$ USD - {item.quantity} unidades = {item.price * item.quantity}$ USD  <button onClick={() => removeFromCart(item?.id)}>Eliminar</button>
-                                </div>
-                            )
-                        })}
-
-                        <h1>Total: ${cartTotal}</h1>
-
-                        <button onClick={handleClearCart}>Vaciar carrito</button>
-
-                    </div>
+                <CartModal
+                    isOpen={isModalOpen}
+                    onClose={handleCloseModal}
+                    title={"Total: " + cartTotal + "$ usd"}
+                    handleClearCart={handleClearCart}
+                >
+                    {cart?.items?.map((item, i) => <CardList item={item} key={i} removeFromCart={removeFromCart} />)}
                 </CartModal>
             }
         </div>
