@@ -100,21 +100,17 @@ const Gallery = () => {
             <h3 className='more'>Ver mas</h3>
 
             {isModalOpen &&
-                <CartModal isOpen={isModalOpen} onClose={handleCloseModal}>
+                <CartModal isOpen={isModalOpen} onClose={handleCloseModal} title="Carrito de compras">
                     <div>
                         {cart?.items?.map((item, i) => {
-                            console.log("modal item", item)
                             return (
                                 <div key={i}>
-                                    {item.title} - {item.price}$ USD - cantidad {item.quantity} = {item.price * item.quantity}$ USD  <button onClick={() => removeFromCart(item?.id)}>Eliminar</button>
+                                    {item.title} {item.price}$ USD - {item.quantity} unidades = {item.price * item.quantity}$ USD  <button onClick={() => removeFromCart(item?.id)}>Eliminar</button>
                                 </div>
                             )
                         })}
 
-                        <div>
-                            <h2>Carrito de compras</h2>
-                            <p>Total: ${cartTotal}</p>
-                        </div>
+                        <h1>Total: ${cartTotal}</h1>
 
                         <button onClick={handleClearCart}>Vaciar carrito</button>
 

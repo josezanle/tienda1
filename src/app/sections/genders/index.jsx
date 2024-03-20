@@ -20,23 +20,16 @@ const Card = ({ item }) => {
     return (
         <div
             className='card'
-            style={{
-                backgroundImage: `url(${item.img} )`,
-                backgroundSize:"cover"
-            }}
+            style={{ backgroundImage: `url(${item.img} )` }}
         >
-            <button>
-                {item.name}
-            </button>
+            <button>{item.name}</button>
         </div>
     )
 }
 
 const Genders = () => {
     return (
-        <div className='genders__container'>
-            {images.map((item, i) => <Card item={item} key={i} />)}
-        </div>
+        <div className='genders__container'>{images.map((item, i) => <Card item={item} key={i} />)}</div>
     )
 }
 

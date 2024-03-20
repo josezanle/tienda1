@@ -71,9 +71,8 @@ const Card = ({ item, showGalleryMode }) => {
           height: 40%;
       }
       .card__normalMode .bottom .text__content {
-        display: flex;
-        flex-flow: column;  
-
+          display: flex;
+          flex-flow: column;  
       }
 
       .card__normalMode .bottom .text__content .card__title {
@@ -252,7 +251,17 @@ const Card = ({ item, showGalleryMode }) => {
 
         .card__normalMode .bottom .text__content .card__desc,
         .card__listMode .bottom .card__desc {font-size: 1.2em}
-    
+      }
+
+      @media screen and (max-width: 400px) {
+        .card__normalMode {
+          width: 100%;
+          height: 400px;
+          margin-bottom: 2em;
+        }
+        .card__normalMode .top {height: 60%}
+        .card__normalMode .bottom {height: 40%}
+
       }
       `}</style>
 

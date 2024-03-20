@@ -1,21 +1,26 @@
 .genders__container {
     width: 100%;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
     gap: 20px;
     padding: 2em;
 }
+
 .genders__container .card {
-    width: 100%;
+    width: 400px;
     height: 400px;
     border-radius: 1em;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     padding: 2em;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .genders__container .card button {
@@ -26,26 +31,20 @@
     font-weight: bold;
     font-size: 2em;
     background: transparent;
-    
 }
 
-/* Breakpoint para pantallas más grandes (1200px o más) */
-@media screen and (min-width: 1200px) {
-    .genders__container {
-        grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1000px) {
+    .genders__container .card {
+        width: 100%;
+        padding: 2em;
+        font-size: 1em;
     }
 }
 
-/* Breakpoint para pantallas medianas (800px o más) */
-@media screen and (max-width: 1199px) {
-    .genders__container{
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media (max-width: 800px) {
+    .genders__container {flex-flow: column}
+    .genders__container .card {width: 100%}
 }
-
-/* Breakpoint para pantallas pequeñas (500px o más) */
-@media screen and (max-width: 799px) {
-    .genders__container {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 400px) {
+    .genders__container .card {height: 300px}
 }

@@ -45,6 +45,10 @@ const CartModal = ({ isOpen, onClose, children, title }) => {
                     justify-content: flex-end;
                     margin-bottom: 2em;
                 }
+
+                @media (max-width: 970px) {
+                    .modal-overlay {padding: 0 2em}
+                }
       `}</style>
         </div>
     );
