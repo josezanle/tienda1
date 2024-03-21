@@ -50,15 +50,14 @@ const Card = ({ item, showGalleryMode }) => {
       <style jsx>{`
 
       .card__normalMode {
-          width: 100%;
-          height: 600px;
+          width: 290px;
+          height: 400px;
           border-radius: 1em;
           cursor: pointer;
       }
       .card__normalMode .top {
           width: 100%;
-          margin-bottom: .5em;
-          height: 60%;
+          height: 200px;
       }
 
       .card__normalMode .top img {
@@ -69,7 +68,8 @@ const Card = ({ item, showGalleryMode }) => {
 
       .card__normalMode .bottom {
           width: 100%;
-          height: 40%;
+          height: 200px;
+          padding-top: 1em;
       }
       .card__normalMode .bottom .text__content {
           display: flex;
@@ -77,15 +77,12 @@ const Card = ({ item, showGalleryMode }) => {
       }
 
       .card__normalMode .bottom .text__content .card__title {
-          font-size: 2em;
-          font-weight: 600;
-          color: grey;
-          color: #FFD08F
+          font-size: 1em;
+          font-weight: 500;
+          color: #eaad51
       }
 
       .card__normalMode .bottom .text__content .card__desc {
-          font-size: 2em;
-          font-weight: 300;
           color: grey;
           margin-bottom: .5em;
       }
@@ -99,7 +96,7 @@ const Card = ({ item, showGalleryMode }) => {
       }
 
       .card__normalMode .bottom .price__content .item__price {
-          font-size: 1.5em;
+          font-size: 1em;
           display: flex;
           align-items: center;
       }
@@ -261,7 +258,7 @@ const Card = ({ item, showGalleryMode }) => {
           width: 60px;
       }
 
-      @media screen and (max-width: 700px) {
+      @media (max-width: 700px) {
         .card__normalMode .bottom .text__content .card__title,
         .card__listMode .bottom .card__title{font-size: 1.5em}
 
@@ -269,7 +266,7 @@ const Card = ({ item, showGalleryMode }) => {
         .card__listMode .bottom .card__desc {font-size: 1.2em}
       }
 
-      @media screen and (max-width: 560px) {
+      @media (max-width: 560px) {
         .card__listMode {width: 100%; gap: .5em}
         .card__listMode .bottom .card__title {font-size: 16px; font-weight: 600}
         .card__listMode .bottom .card__desc {font-size: 14px}
@@ -305,15 +302,11 @@ const Card = ({ item, showGalleryMode }) => {
         .card__listMode .bottom .addCart__btn {display: none}
 }
 
-      @media screen and (max-width: 400px) {
+      @media (max-width: 400px) {
         .card__normalMode {
           width: 100%;
-          height: 400px;
           margin-bottom: 2em;
         }
-        .card__normalMode .top {height: 60%}
-        .card__normalMode .bottom {height: 40%}
-
       }
 `}</style>
 

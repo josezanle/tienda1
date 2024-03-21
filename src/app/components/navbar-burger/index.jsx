@@ -21,11 +21,11 @@ const BurgerNavbar = () => {
 
             {
                 cart?.items?.length > 0
-                    ? <span className="cart__box"><Icon size={30} name='cart' fill='#1c1c1c' onClick={handleOpenModal} /></span>
-                    : <span className="cart__box__empty"><Icon size={30} name='cart' fill='#1c1c1c' /></span>
+                    ? <span className="cart__box"><Icon size={25} name='cart' fill='grey' onClick={handleOpenModal} /></span>
+                    : <span className="cart__box__empty"><Icon size={30} name='cart' fill='grey' /></span>
             }
 
-            <Icon name={isOpen === true ? "close" : "burger"} onClick={toggleNavbar} />
+            <Icon name={isOpen === true ? "close" : "burger"} onClick={toggleNavbar} size={25} />
 
             {isOpen &&
                 <div className="dropdown__content">
@@ -50,7 +50,7 @@ const BurgerNavbar = () => {
                     top: 0;
                     left: 0;
                     right: 0;
-                    gap: 10px;
+                    gap: 1em;
                 }
 
                 .burger__navbar .dropdown__content {
@@ -61,7 +61,7 @@ const BurgerNavbar = () => {
                     right: 0;
                     width: 100vw;
                     height: 0;
-                    background-image: linear-gradient(to top,#dc9a34, #eaad51);
+                    background-image: linear-gradient(to bottom,#dc9a34, #eaad51);
                     z-index: 3000;
                     transition: height 0.3s ease;
                     padding: 2em;

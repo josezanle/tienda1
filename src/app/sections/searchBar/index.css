@@ -1,5 +1,5 @@
 .searchBar__container {
-    width: 100%;
+    width: 1200px;
     height: 60px;
     display: flex;
     gap: 10px;
@@ -38,6 +38,8 @@
     align-items: center;
 }
 
+@media (max-width: 1200px) {.searchBar__container{width: 100%; padding: 0 2em}}
+@media (max-width: 600px) {.searchBar__container{padding: 0 1em}}
 @media (max-width: 700px) {
     .searchBar__container {height: 40px}
     .searchBar__container .search__input {width: calc(100% - 80px)}

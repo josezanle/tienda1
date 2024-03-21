@@ -89,13 +89,7 @@ const Gallery = () => {
             <SearchBar OntoggleModeView={OntoggleModeView} activeMode={activeMode} showGalleryMode={showGalleryMode} />
 
             <div className={showGalleryMode === "normal" ? "content__mode__normal" : "content__mode__list"}>
-                {ITEMS.map((item) =>
-                    <Card
-                        key={item.id}
-                        item={item}
-                        showGalleryMode={showGalleryMode}
-                    />
-                )}
+                {ITEMS.map((item) => <Card key={item.id} item={item} showGalleryMode={showGalleryMode} />)}
             </div>
 
             <h3 className='more'>Ver mas</h3>

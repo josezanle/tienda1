@@ -13,8 +13,8 @@ const CartModal = ({ title, onClose, isOpen, children, handleClearCart }) => {
                     <Icon name='close' onClick={onClose} />
                 </div>
 
-                <Br/>
-                <Br/>
+                <Br />
+                <Br />
 
                 <div className="main__modal__content">{children}</div>
 

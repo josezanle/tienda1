@@ -1,35 +1,34 @@
 .gallery__container {
     width: 100%;
     min-height: 100vh;
-    background: #ffffff;
+    background: white;
     display: flex;
     flex-flow: column;
-    padding: 2em;
     align-items: center;
 }
 
 .gallery__container .title {
-    font-size: 4em;
+    font-size: 2em;
     font-weight: bold;
     color: #95ca4f;
+    margin-top: 3em;
 }
 
 .gallery__container .desc {
     font-size: 2em;
-    color:#1c1c1c;
-    font-weight: 300;
-    margin-bottom: 2em;
+    color: #1c1c1c;
+    margin-bottom: 2em
 }
 
 .gallery__container .content__mode__normal {
-    width: 100%;
-    min-height: 100vh;
-    background: white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 2em;
+    gap: 10px;
 }
+
 /* --------------------------- */
 /* --------------------------- */
 .gallery__container .content__mode__list {
@@ -40,14 +39,13 @@
     flex-flow: column;
     margin-top: 2em;
 }
+
 /* --------------------------- */
 /* --------------------------- */
 .gallery__container .more {
     width: 150px;
     color: silver;
     padding: .5em 0;
-    margin-top: 3em;
-    margin-bottom: 5em;
     text-align: center;
     cursor: pointer;
     border: 2px solid silver;
@@ -55,20 +53,40 @@
     justify-self: center;
 }
 
-@media screen and (min-width: 1200px) {.gallery__container .content__mode__normal {grid-template-columns: repeat(3, 1fr)}}
-@media screen and (max-width: 1199px) {.gallery__container .content__mode__normal {grid-template-columns: repeat(2, 1fr)}}
-@media screen and (max-width: 799px) {.gallery__container .content__mode__normal {grid-template-columns: 1fr}}
-
-@media screen and (max-width: 700px) {
-    .gallery__container .title {
-        font-size: 1.5em;
+@media (max-width: 1200px) {
+    .gallery__container .content__mode__normal {
         width: 100%;
+        padding: 0 2em;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .gallery__container .title,
+    .gallery__container .desc {
+        padding: 0 1em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .gallery__container .title {
+        font-size: 1.5em
     }
 
     .gallery__container .desc {
         font-size: 1.2em;
         margin-bottom: 1em;
-        width: 100%;
     }
 }
-@media screen and (max-width: 600px) {.gallery__container {padding: 1em}}
+
+@media (max-width: 400px) {
+    .gallery__container {
+        gap: 0;
+        padding: 0;
+    }
+
+    .gallery__container .content__mode__normal {
+        padding: 0 1em;
+        gap: 1em;
+    }
+}
