@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useState } from "react";
 
 import Navbar from "./components/navbar";
 import BurgerNavbar from "./components/navbar-burger";
@@ -9,7 +10,9 @@ import Footer from "./sections/footer";
 import Gallery from "./sections/gallery";
 import Genders from "./sections/genders";
 
-export default function Home() {
+
+const Body = () => {
+
   return (
     <>
       <Navbar />
@@ -21,5 +24,15 @@ export default function Home() {
       <Footer />
       <Copyrights />
     </>
-  );
+  )
+}
+
+export default function Home() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  return isClient ? <Body /> : null
 }

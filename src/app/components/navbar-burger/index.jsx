@@ -17,12 +17,12 @@ const BurgerNavbar = () => {
 
     return (
         <nav className="burger__navbar">
-            <Logo size="30px" strokeOne="#aede6f" />
+            <Logo size="30px" strokeOne="#aede6f" strokeTwo="#aede6f" />
 
             {
                 cart?.items?.length > 0
                     ? <span className="cart__box"><Icon size={25} name='cart' fill='grey' onClick={handleOpenModal} /></span>
-                    : <span className="cart__box__empty"><Icon size={30} name='cart' fill='grey' /></span>
+                    : <span className="cart__box__empty"><Icon size={25} name='cart' fill='grey' /></span>
             }
 
             <Icon name={isOpen === true ? "close" : "burger"} onClick={toggleNavbar} size={25} />
